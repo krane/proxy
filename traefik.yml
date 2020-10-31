@@ -27,6 +27,6 @@ certificatesResolvers:
   krane:
     acme:
       email: "traefik@krane.sh"
-      storage: "/acme.json"
-      tlsChallenge:
-        acme: true
+      storage: "acme.json"
+      httpChallenge:
+        entryPoint: http

@@ -1,0 +1,23 @@
+Traefik serves as a proxy forwarding requests from the outside into our containers. Trafik uses the idea of container labels to be able to map incoming requests into a viable container who can handle that request all based on the labels applied to that container. In Traefik you have Routers, Services, and Middlewares. The routers receive incoming requests, they apply and middlewares if necessary, and attempt find a Service which can handle that request. A Service is a loadbalancer of sorts, it know which containers to route traefik to. 
+
+Traefik runs on :80 and :443 for the fact that it is the service who first receives requests on these ports from the outside world. 
+
+Example Traefik docker-compose config:
+
+traefik:
+  command:
+    # Enabling docker provider
+    - "--providers.docker=true"
+    # Do not expose containers unless explicitly told so
+    - "--providers.docker.exposedbydefault=false"
+  volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+whoami:
+  labels:
+    # Explicitly tell Traefik to expose this container
+    - "traefik.enable=true"
+    # The domain the service will respond to
+    - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+    # Allow request only from the predefined entry point named "web"
+    - "traefik.http.routers.whoami.entrypoints=web"
