@@ -1,0 +1,32 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+entryPoints:
+  http:
+    address: :80
+  https:
+    address: :443
+
+log:
+  level: DEBUG
+  format: json
+  filePath: /etc/traefik/traefik.log
+
+api:
+  insecure: true
+  dashboard: true
+
+providers:
+  docker:
+    endpoint: unix:///var/run/docker.sock
+    exposedByDefault: false
+    network: krane
+
+certificatesResolvers:
+  krane:
+    acme:
+      email: "traefik@krane.sh"
+      storage: "/acme.json"
+      tlsChallenge:
+        acme: true

@@ -1,15 +1,11 @@
-# This is a custom image of traefik with managed configurations for krane
-FROM traefik:v2.2
+# This is a custom image of traefik with managed configurations for Krane
+FROM traefik:v2.3
 
-# Ref: https://docs.traefik.io/reference/static-configuration/env/
-ENV TRAEFIK_PROVIDERS_DOCKER_NETWORK=krane
-ENV TRAEFIK_API_INSECURE=true
-ENV TRAEFIK_PROVIDERS_DOCKER=true
-ENV TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT=true
-ENV TRAEFIK_API_DASHBOARD=true
-ENV TRAEFIK_LOG_LEVEL=DEBUG
+COPY ./traefik.yml /etc/traefik/
 
 EXPOSE 80
-EXPOSE 8080
+EXPOSE 443
+# Traefik Dashboard
+EXPOSE 8080 
 
 VOLUME /var/run/docker.sock
