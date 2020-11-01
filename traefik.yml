@@ -3,9 +3,9 @@ global:
   sendAnonymousUsage: false
 
 entryPoints:
-  http:
+  web:
     address: :80
-  https:
+  web-secure:
     address: :443
 
 log:
@@ -22,7 +22,6 @@ providers:
     endpoint: unix:///var/run/docker.sock
     exposedByDefault: true
     network: krane
-
 certificatesResolvers:
   krane:
     acme:

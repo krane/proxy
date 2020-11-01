@@ -2,7 +2,7 @@
 
 A custom configuration of traefik to use with [Krane](https://krane.sh)
 
-## Installing 
+## Installing
 
 ```
 docker pull biensupernice/proxy
