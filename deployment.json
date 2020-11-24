@@ -1,0 +1,11 @@
+{
+  "name": "proxy",
+  "image": "biensupernice/proxy",
+  "volumes": {
+    "/var/run/docker.sock": "/var/run/docker.sock"
+  },
+  "ports": {
+    "80": "80",
+    "443": "443"
+  }
+}

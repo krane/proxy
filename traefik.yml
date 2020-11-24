@@ -2,9 +2,18 @@ global:
   checkNewVersion: true
   sendAnonymousUsage: false
 
+defaultEntryPoints:
+  - https
+  - http
+
 entryPoints:
   web:
     address: :80
+    http:
+      redirections:
+        entrypoint:
+          to: web-secure
+          scheme: https
   web-secure:
     address: :443
 
@@ -22,10 +31,10 @@ providers:
     endpoint: unix:///var/run/docker.sock
     exposedByDefault: true
     network: krane
+    watch: true
+
 certificatesResolvers:
-  krane:
+  lets-encrypt:
     acme:
-      email: "traefik@krane.sh"
-      storage: "acme.json"
-      httpChallenge:
-        entryPoint: http
+      email: "biensupernice@gmail.com"
+      storage: "/acme.json"
