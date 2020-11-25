@@ -38,3 +38,4 @@ certificatesResolvers:
     acme:
       email: "biensupernice@gmail.com"
       storage: "/acme.json"
+      tlsChallenge: true
