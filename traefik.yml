@@ -2,10 +2,6 @@ global:
   checkNewVersion: true
   sendAnonymousUsage: false
 
-defaultEntryPoints:
-  - https
-  - http
-
 entryPoints:
   web:
     address: :80
