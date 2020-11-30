@@ -11,7 +11,7 @@ entryPoints:
 log:
   level: DEBUG
   format: json
-  filePath: /etc/traefik/traefik.log
+  # filePath: /etc/traefik/traefik.log
 
 api:
   insecure: true
