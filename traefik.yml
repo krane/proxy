@@ -11,7 +11,6 @@ entryPoints:
 log:
   level: DEBUG
   format: json
-  # filePath: /etc/traefik/traefik.log
 
 api:
   insecure: true
@@ -28,6 +27,8 @@ providers:
 certificatesResolvers:
   lets-encrypt:
     acme:
-      email: "biensupernice@gmail.com"
-      storage: "/acme.json"
-      tlsChallenge: true
+      email: biensupernice@gmail.com
+      storage: /lets-encrypt/acme.json
+      tlsChallenge: {}
+      httpChallenge:
+        entryPoint: web
