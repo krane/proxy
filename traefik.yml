@@ -27,7 +27,7 @@ providers:
 certificatesResolvers:
   lets-encrypt:
     acme:
-      email: biensupernice@gmail.com
+      email: "{{email}}"
       storage: /lets-encrypt/acme.json
       tlsChallenge: {}
       httpChallenge:
