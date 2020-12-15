@@ -27,7 +27,7 @@ providers:
 certificatesResolvers:
   lets-encrypt:
     acme:
-      email: "{{email}}"
+      email: "LETSENCRYPT_EMAIL"
       storage: /lets-encrypt/acme.json
       tlsChallenge: {}
       httpChallenge:

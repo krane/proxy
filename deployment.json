@@ -1,6 +1,11 @@
 {
-  "name": "proxy",
+  "name": "krane-proxy",
   "image": "biensupernice/proxy",
+  "secured": true,
+  "alias": "monitor.biensupernice.com",
+  "env": {
+    "LETSENCRYPT_EMAIL": "biensupernice@gmail.com"
+  },
   "volumes": {
     "/var/run/docker.sock": "/var/run/docker.sock"
   },
