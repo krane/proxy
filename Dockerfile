@@ -2,6 +2,7 @@
 FROM traefik:v2.3
 
 COPY ./traefik.yml /etc/traefik/traefik.yml
+RUN chmod 700 ./traefik.yml
 
 EXPOSE 80
 EXPOSE 443
