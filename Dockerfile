@@ -14,6 +14,6 @@ COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
 VOLUME /var/run/docker.sock
-VOLUME /lets-encrypt/acme.json
+VOLUME /lets-encrypt
 
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
