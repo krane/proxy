@@ -9,13 +9,13 @@ RUN chmod 600 /etc/traefik/traefik.yml
 RUN mkdir -p /lets-encrypt/acme.json
 RUN chmod 600 /lets-encrypt/acme.json
 
-EXPOSE 80
-EXPOSE 443
-# Traefik Dashboard
-EXPOSE 8080 
-
+# start script
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 8080 
 
 VOLUME /var/run/docker.sock
 VOLUME /lets-encrypt
