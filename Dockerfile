@@ -7,7 +7,7 @@ RUN chmod 777 /etc/traefik/traefik.yml
 
 # ensure lets encrypt directory
 RUN mkdir -p /lets-encrypt/acme.json
-RUN chmod 777 /lets-encrypt/acme
+RUN chmod 777 /lets-encrypt/acme.json
 
 EXPOSE 80
 EXPOSE 443
