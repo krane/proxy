@@ -1,6 +1,6 @@
 # Proxy
 
-A custom configuration of traefik to use with [Krane](https://krane.sh)
+A custom configuration of [Traefik](https://doc.traefik.io/traefik) to use with [Krane](https://krane.sh)
 
 ## Installing
 
