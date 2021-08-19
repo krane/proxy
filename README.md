@@ -5,5 +5,5 @@ A custom configuration of [Traefik](https://doc.traefik.io/traefik) to use with 
 ## Installing
 
 ```
-docker pull biensupernice/proxy
+docker pull ghcr.io/krane/proxy
 ```
